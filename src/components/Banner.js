@@ -4,6 +4,7 @@ import { ArrowRightCircle } from "react-bootstrap-icons"
 import headerImg from "../assets/img/header-img.svg";
 import 'animate.css';
 import {Link } from "react-router-dom";
+import TrackVisibility from 'react-on-screen';
 
 export const Banner = () => {
     const [loopNum, setLoopNum] = useState(0); // useState hook can track state in function components
@@ -58,8 +59,15 @@ export const Banner = () => {
                         </Link>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
+                    <TrackVisibility>
+                    {({ isVisible }) =>
+                    <div  id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                         <img src={headerImg} alt="Headder Img"></img>
+                        </div>}
+                    </TrackVisibility>
+                    
                     </Col>
+                    
                 </Row>
             </Container>
         </section>
