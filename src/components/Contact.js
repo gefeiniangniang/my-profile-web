@@ -3,8 +3,9 @@ import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import { NavBar } from "../components/NavBar";
 
-export const Contact = () => {
+const Contact = () => {
   const formInitialDetails = {
     firstName: '',
     lastName: '',
@@ -45,6 +46,7 @@ export const Contact = () => {
 
   return (
     <section className="contact" id="connect">
+      <NavBar />
       <Container>
         <Row className="align-items-center">
           <Col size={12} md={6}>
@@ -93,3 +95,4 @@ export const Contact = () => {
     </section>
   )
 }
+export default Contact;
